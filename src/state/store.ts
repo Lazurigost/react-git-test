@@ -1,6 +1,6 @@
-// store.ts
+// Создание store файла для взаимодействия с Redux
 import { configureStore } from '@reduxjs/toolkit';
-import repoReducer from './repo/repoSlice'; // Adjust the path as necessary
+import repoReducer from './repo/repoSlice'; 
 
 const store = configureStore({
   reducer: {
@@ -8,7 +8,6 @@ const store = configureStore({
   },
 });
 
-// Define RootState and AppDispatch types
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 

@@ -1,47 +1,127 @@
+$primary-color: #00838F;
+$secondary-color: #2196F3;
+$white: #ffffff;
+$dark-background: #333;
+$light-gray: #f5f5f5;
+$font-size-base: 16px;
+$font-family: 'Roboto', sans-serif;
+
+
+* {
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+html, body {
+  
+  height: 100%; 
+}
+
 .App {
   text-align: center;
-  height: 85%;
+  height: 100%;
 }
-html {
-  height: -webkit-fill-available; /* We have to fix html height */
-}
+
 #root {
   height: 100%;
   margin-bottom: 20%;
 }
+
 .App-header {
-  background-color: #00838F;
+  background-color: $primary-color;
   min-height: 100px;
   max-height: 100px;
   min-width: 100%;
   display: flex;
-  justify-content: left;
-  flex-direction: row;
+  justify-content: center;
+  flex-direction: column;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  color: $white;
 }
 
 .BodyDiv {
   display: flex;
+  flex-direction: column;
   width: 100%;
+  height: calc(100% - 200px);
+  background-color: $white;
+  justify-content: flex-start;
+}
+.welcomeDiv {
   height: 100%;
-  background-color: white;
+  display: flex;
   justify-content: center;
   align-items: center;
-}
-
-body {
-  height: 100% ;
-}
-
-.WelcomeText{
   font-size: 46px;
+  color: #4F4F4F;
 }
 
-.Footer {
-  height: 100px;
+.content-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  width: 100%;
+  justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
+}
+
+.table-container {
+  flex: 1; 
+  width: 70%; 
+  padding: 20px;
+  overflow: auto;
+  margin-right: 20px; 
+}
+
+.selected-repo-container {
+  width: 30%; 
+  overflow-y: auto; 
+  display: flex;
+  padding: 30px; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  background-color: #F2F2F2;
+  font-family: 'Roboto', sans-serif;
+}
+
+footer {
+  height: 100px; 
+  background-color: darkslategray;
+  width: 100%; 
+}
+
+.chip {
+  margin: 4px; 
+  padding: 10px 15px;
+}
+
+.most-used-language {
+  background-color: $secondary-color; 
+  color: $white; 
+  font-size: 1.2rem; 
+}
+
+.resultDiv {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start; 
+}
+
+.selectedDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: flex-start; 
+}
+
+.langStarDiv {
+  width: 100%; 
+  display: flex;
+  justify-content: space-between; 
+}
+
+.languageDiv {
+  display: flex;
+  flex-wrap: wrap; 
 }
