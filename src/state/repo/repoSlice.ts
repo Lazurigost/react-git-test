@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
+//Создание класса
 interface Repo {
   id: number;
   name: string;
@@ -8,22 +8,22 @@ interface Repo {
   stars: number;
   updated_at: Date;
   description: string;
-  license: string;
+  license: {};
 }
-
+//Создание списка
 interface RepoState {
   repos: Repo[];
   loading: boolean;
   error: string | null;
 }
-
+//Инициализация списка
 const initialState: RepoState = {
   repos: [],
   loading: false,
   error: null,
 };
 
-// Define the async thunk action
+//Асинхронный метод для получения данных
 export const fetchUserRepos = createAsyncThunk(
   "repo/fetchUserRepos",
   async (username: string) => {
@@ -34,7 +34,7 @@ export const fetchUserRepos = createAsyncThunk(
     return response.json();
   }
 );
-
+//Создание слайса 
 const repoSlice = createSlice({
   name: "repo",
   initialState,
@@ -56,5 +56,5 @@ const repoSlice = createSlice({
   },
 });
 
-// Export the reducer as default
+//Экспорт данных
 export default repoSlice.reducer;
