@@ -13,7 +13,7 @@ interface Repo {
   languages_url: string; 
 }
 
-// State самого слайса
+// Добавление свойств для списка всех языков и статуса
 interface RepoState {
   repos: Repo[];
   languages: { [key: string]: any }; 

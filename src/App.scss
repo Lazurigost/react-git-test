@@ -39,6 +39,13 @@ html, body {
   font-size: calc(10px + 2vmin);
   color: $white;
 }
+.loadError {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .BodyDiv {
   display: flex;

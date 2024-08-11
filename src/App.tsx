@@ -40,7 +40,7 @@ const App: React.FC = () => {
   const [rowsPerPage, setRowsPerPage] = useState(5); 
   const dispatch = useDispatch<AppDispatch>();
   //Селектор для репозиториев и языков
-  const { repos, error, languages } = useSelector((state: RootState) => state.repo);
+  const { repos, error, loading, languages } = useSelector((state: RootState) => state.repo);
 
   //Функция поиска после нажатия на кнопку
   const handleSearch = async () => {
@@ -92,9 +92,11 @@ const App: React.FC = () => {
       </header>
 
       <div className='BodyDiv'>
+
         
-        {error && <div>Произошла ошибка: {error}</div>}
-        {repos.length === 0 && <div className='welcomeDiv'>Добро пожаловать!</div>}
+        {loading && <div className='loadError'>Загружаем данные...</div>}
+        {error && <div className='loadError'>Произошла ошибка: {error}</div>}
+        {repos.length === 0 && !loading && !error && <div className='welcomeDiv'>Добро пожаловать!</div>}
         
         {repos.length > 0 && (
           <div className="content-container">
